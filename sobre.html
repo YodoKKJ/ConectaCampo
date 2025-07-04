@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Conheça a história da Loja ABC e teste seus conhecimentos com nosso quiz interativo." />
+  <title>Sobre – Loja ABC</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <link rel="stylesheet" href="estilos-sobre.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <header class="cabecalho">
+    <div class="logo">Loja<span>aBC</span></div>
+    <nav class="menu" role="navigation" aria-label="Menu principal">
+      <a href="index.html">Início</a>
+      <a href="sobre.html" class="ativo" aria-current="page">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main class="carrossel-container" role="main">
+    <div class="carrossel" id="carrossel" role="region" aria-label="História da empresa" tabindex="0">
+      <section class="ano-item" data-ano="2020" aria-label="Ano 2020">
+        <h2>2020</h2>
+        <p>Fundamos a LojaPremium com a missão de inovar o varejo online.</p>
+      </section>
+      <section class="ano-item" data-ano="2021" aria-label="Ano 2021">
+        <h2>2021</h2>
+        <p>Expandimos nossa operação e conquistamos nossos primeiros mil clientes.</p>
+      </section>
+      <section class="ano-item" data-ano="2022" aria-label="Ano 2022">
+        <h2>2022</h2>
+        <p>Lançamos uma nova linha de produtos sustentáveis com grande aceitação.</p>
+      </section>
+      <section class="ano-item quiz-final" data-ano="quiz" aria-label="Quiz interativo">
+        <h2>Agora é com você!</h2>
+        <p>Teste seus conhecimentos sobre nossa história.</p>
+        <button id="abrir-quiz" aria-describedby="quiz-description">Fazer o Quiz</button>
+        <div id="quiz-description" class="sr-only">Abrir quiz interativo sobre a história da empresa</div>
+      </section>
+    </div>
+    
+    <!-- Instruções de navegação para leitores de tela -->
+    <div class="sr-only" aria-live="polite" id="carrossel-instrucoes">
+      Use as setas do teclado ou role horizontalmente para navegar pela nossa história.
+    </div>
+  </main>
+
+  <div class="borda-degrade esquerda" aria-hidden="true"></div>
+  <div class="borda-degrade direita" aria-hidden="true"></div>
+
+  <!-- Popup do Quiz -->
+  <div id="quiz-popup" class="popup escondido" role="dialog" aria-modal="true" aria-labelledby="quiz-titulo">
+    <div class="popup-conteudo">
+      <button id="fechar-quiz" class="fechar" aria-label="Fechar quiz" title="Fechar quiz">×</button>
+      
+      <div id="quiz-start">
+        <h2 id="quiz-titulo">Teste seus conhecimentos!</h2>
+        <p>Descubra o quanto você sabe sobre a nossa história.</p>
+        <button id="btnStart">Começar Quiz</button>
+      </div>
+
+      <div id="quiz-container" class="escondido">
+        <div class="quiz-header">
+          <span id="progressText" aria-live="polite">Pergunta 1 de 5</span>
+          <div id="progressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso do quiz">
+            <div id="progressFill"></div>
+          </div>
+        </div>
+        <h3 id="pergunta" aria-live="polite"></h3>
+        <div id="opcoes" role="radiogroup" aria-labelledby="pergunta"></div>
+        <div class="controles-quiz">
+          <button id="btnConfirm" aria-describedby="confirm-help">Confirmar</button>
+          <button id="btnNext" aria-describedby="next-help">Próxima</button>
+        </div>
+        <div id="confirm-help" class="sr-only">Confirmar sua resposta selecionada</div>
+        <div id="next-help" class="sr-only">Ir para a próxima pergunta</div>
+      </div>
+
+      <div id="quiz-end" class="escondido">
+        <h2>Parabéns!</h2>
+        <p id="pontuacaoTexto" aria-live="polite"></p>
+        <div class="grafico-container">
+          <canvas id="graficoPizza" width="300" height="300" aria-label="Gráfico com resultado do quiz" role="img"></canvas>
+        </div>
+        <div class="controles-quiz">
+          <button id="btnShare" aria-describedby="share-help">Compartilhar Resultado</button>
+          <button id="btnRestart" aria-describedby="restart-help">Refazer Quiz</button>
+        </div>
+        <div id="share-help" class="sr-only">Copiar resultado para área de transferência</div>
+        <div id="restart-help" class="sr-only">Reiniciar o quiz do início</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="rodape" role="contentinfo">
+    &copy; 2025 ABC – Todos os direitos reservados.
+  </footer>
+
+  <!-- Estilos para leitores de tela -->
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    
+    /* Melhorar foco para navegação por teclado */
+    .carrossel:focus {
+      outline: 3px solid #f3a444;
+      outline-offset: 2px;
+    }
+    
+    /* Skip link para acessibilidade */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: #f3a444;
+      color: #000;
+      padding: 8px;
+      text-decoration: none;
+      border-radius: 4px;
+      z-index: 1001;
+    }
+    
+    .skip-link:focus {
+      top: 6px;
+    }
+  </style>
+
+  <!-- Skip link para acessibilidade -->
+  <a href="#carrossel" class="skip-link">Pular para conteúdo principal</a>
+
+  <script src="script-sobre.js"></script>
+</body>
+</html>
+

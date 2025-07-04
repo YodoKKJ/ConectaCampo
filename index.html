@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubra nossa seleção premium de produtos exclusivos com tecnologia de ponta">
+  <title>ABC Store </title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <!-- Skip links para acessibilidade -->
+  <a href="#main-content" class="sr-only sr-only-focusable">Pular para o conteúdo principal</a>
+  <a href="#produtos" class="sr-only sr-only-focusable">Pular para os produtos</a>
+
+  <header class="cabecalho">
+    <div class="logo" tabindex="0">
+      ABC<span>Store</span>
+    </div>
+    
+    <nav class="menu" role="navigation" aria-label="Menu principal">
+      <a href="#" class="ativo" aria-current="page">Início</a>
+      <a href="#">Produtos</a>
+      <a href="#">Sobre</a>
+      <a href="#">Contato</a>
+    </nav>
+    
+    <div class="icones">
+      <button class="icon-btn" aria-label="Abrir busca" title="Buscar produtos">
+        🔍
+      </button>
+      <button class="icon-btn" aria-label="Ver notificações" title="Notificações">
+        🔔
+      </button>
+      <button class="icon-btn" aria-label="Ver carrinho" title="Carrinho de compras">
+        🛒 <span id="contador-carrinho" class="sr-only">0 itens</span>
+      </button>
+    </div>
+    
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <span class="hamburguer"></span>
+      <span class="hamburguer"></span>
+      <span class="hamburguer"></span>
+    </button>
+  </header>
+
+  <!-- Overlay do menu mobile -->
+  <div class="menu-overlay" aria-hidden="true"></div>
+
+  <main class="produtos" id="main-content">
+    <h1 class="titulo-destaque">Itens em Destaque</h1>
+    <p class="subtitulo-destaque">Descubra nossa seleção premium de produtos exclusivos</p>
+    
+    <section class="grade-produtos" role="region" aria-label="Lista de produtos" id="produtos">
+      <article class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="Gadget Premium Tech. Clique para revelar detalhes" data-produto="1">
+        <div class="flip-card-inner">
+          <div class="flip-card-front carta-fundo">
+            <div class="carta-conteudo">
+              <h3>TOQUE PARA REVELAR</h3>
+              <div class="carta-icone" aria-hidden="true">✨</div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <img src="produto1.jpg" alt="Gadget Premium Tecnológico" class="produto-imagem">
+            <h3>Gadget Premium Tech</h3>
+            <p>Dispositivo tecnológico de última geração com design sofisticado e funcionalidades avançadas para o usuário moderno.</p>
+            <div class="produto-preco" aria-label="Preço: R$ 299,90">R$ 299,90</div>
+            <button class="botao-comprar" aria-label="Adicionar Gadget Premium Tech ao carrinho">
+              <span>Comprar Agora</span>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="Luxury Tech Device. Clique para revelar detalhes" data-produto="2">
+        <div class="flip-card-inner">
+          <div class="flip-card-front carta-fundo">
+            <div class="carta-conteudo">
+              <h3>TOQUE PARA REVELAR</h3>
+              <div class="carta-icone" aria-hidden="true">🎯</div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <img src="produto2.jpg" alt="Dispositivo Luxury Tech" class="produto-imagem">
+            <h3>Luxury Tech Device</h3>
+            <p>Solução premium que combina elegância e performance excepcional, desenvolvida para quem busca o melhor em tecnologia.</p>
+            <div class="produto-preco" aria-label="Preço: R$ 459,90">R$ 459,90</div>
+            <button class="botao-comprar" aria-label="Adicionar Luxury Tech Device ao carrinho">
+              <span>Comprar Agora</span>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="Smart Home Premium. Clique para revelar detalhes" data-produto="3">
+        <div class="flip-card-inner">
+          <div class="flip-card-front carta-fundo">
+            <div class="carta-conteudo">
+              <h3>TOQUE PARA REVELAR</h3>
+              <div class="carta-icone" aria-hidden="true">🚀</div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <img src="produto3.jpg" alt="Smart Home Premium" class="produto-imagem">
+            <h3>Smart Home Premium</h3>
+            <p>Sistema inteligente para casa que redefine o conceito de automação residencial com tecnologia de ponta e design moderno.</p>
+            <div class="produto-preco" aria-label="Preço: R$ 699,90">R$ 699,90</div>
+            <button class="botao-comprar" aria-label="Adicionar Smart Home Premium ao carrinho">
+              <span>Comprar Agora</span>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Instruções para acessibilidade -->
+    <div class="sr-only" aria-live="polite" id="produto-instrucoes"></div>
+  </main>
+
+  <!-- Modal de busca -->
+  <div id="modal-busca" class="modal" style="display: none;" role="dialog" aria-labelledby="modal-titulo" aria-modal="true">
+    <div class="modal-conteudo">
+      <button class="fechar" aria-label="Fechar busca">&times;</button>
+      <h2 id="modal-titulo">Buscar Produtos</h2>
+      <div class="busca-container">
+        <input type="text" id="campo-busca" placeholder="Digite o que você procura..." aria-label="Campo de busca">
+        <button id="btn-buscar" aria-label="Executar busca">Buscar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="rodape">
+    <p>&copy; 2025 ABC Store - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <style>
+    /* Estilos para elementos de acessibilidade */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .sr-only-focusable:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: 8px 16px;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
+      background: #f3a444;
+      color: #222;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      z-index: 1000;
+    }
+  </style>
+</body>
+</html>
+
